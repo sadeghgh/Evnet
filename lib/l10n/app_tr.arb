@@ -1,0 +1,86 @@
+{
+    "login": "Giriş",
+    "@login": {
+        "description": ""
+    },
+    "signup": "Kaydol",
+    "@signup": {
+        "description": ""
+    },
+    "logout": "Çıkış",
+    "@logout": {
+        "description": "Sistemden Çık"
+    },
+    "createAccount": "Yeni Kullanıcı",
+    "@createAccount": {
+        "description": ""
+    },
+    "haveAccount": "Zaten bir hessabım var",
+    "@haveAccount": {
+        "description": ""
+    },
+    "addLogo": "Şirket Logosu Ekle",
+    "@addLogo": {
+        "description": ""
+    },
+    "addImage": "Resimleri Yükle",
+    "@addImage": {
+        "description": ""
+    },
+    "pickImageWarningMessage": "Lütfen Bir Resim Seçin",
+    "@pickImageWarningMessage": {
+        "description": "Seçilen resimler için uyarı mesajı"
+    },
+    "pickImageSuccessfullyMsg": "Resim başarılı yüklendi!",
+    "@pickImageSuccessfullyMsg": {
+        "description": ""
+    },
+    "email": "E-posta Adresi",
+    "@email": {
+        "description": ""
+    },
+    "firstName": "Adı",
+    "@firstName": {
+        "description": ""
+    },
+    "customerName": "Müşteri İsmi",
+    "@customerName": {
+        "description": ""
+    },
+    "nameWarningMessage": "Lütfen İsim Giriniz",
+    "@nameWarningMessage": {
+        "description": ""
+    },
+    "lastName": "Soyadı",
+    "@lastName": {
+        "description": ""
+    },
+    "phoneNr": "Telefon No",
+    "@phoneNr": {
+        "description": ""
+    },
+    "addCustomer": "Müşteri Ekle",
+    "@addCustomer": {
+        "description": ""
+    },
+    "addPropertiy": "Portföy Ekle",
+    "@addPropertiy": {
+        "description": ""
+    },
+    "connectionErrorMsg": "Bir hata oluştu, lütfen internet bağlantınızı kontrol edin!",
+    "@connectionErrorMsg": {
+        "description": ""
+    },
+    "emailAdressLable": "E-posta Adresi",
+    "@emailAdressLable": {
+        "description": ""
+    },
+    "emailAdressWarningMsg": "Lütfen geçerli bir e-posta adresi girin.",
+    "@emailAdressWarningMsg": {
+        "description": ""
+    },
+    "propertyAddedSuccesfully": "Portföy eklendi",
+    "@propertyAddedSuccesfully": {
+        "description": ""
+    }
+}

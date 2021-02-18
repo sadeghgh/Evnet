@@ -1,0 +1,90 @@
+{
+    "login": "Login",
+    "@login": {
+        "description": ""
+    },
+    "signup": "Signup",
+    "@signup": {
+        "description": ""
+    },
+    "logout": "Logout",
+    "@logout": {
+        "description": "logout from the system"
+    },
+    "createAccount": "Create new account",
+    "@createAccount": {
+        "description": ""
+    },
+    "forgottPsw": "Forgott your password?",
+    "@forgottPsw": {
+        "description": ""
+    },
+    "haveAccount": "I already have an account",
+    "@haveAccount": {
+        "description": ""
+    },
+    "addLogo": "Add your company logo",
+    "@addLogo": {
+        "description": ""
+    },
+    "addImage": "Add property image",
+    "@addImage": {
+        "description": ""
+    },
+    "pickImageWarningMessage": "Please pick an image",
+    "@pickImageWarningMessage": {
+        "description": "Warning message for picking image"
+    },
+    "pickImageSuccessfullyMsg": "Image successfully upploaded!",
+    "@pickImageSuccessfullyMsg": {
+        "description": ""
+    },
+    "email": "Email Adress",
+    "@email": {
+        "description": ""
+    },
+    "firstName": "First Name",
+    "@firstName": {
+        "description": ""
+    },
+    "customerName": "The Customer Name",
+    "@customerName": {
+        "description": ""
+    },
+    "nameWarningMessage": "Please enter the name",
+    "@nameWarningMessage": {
+        "description": ""
+    },
+    "lastName": "Last Name",
+    "@lastName": {
+        "description": ""
+    },
+    "phoneNr": "Phone Number",
+    "@phoneNr": {
+        "description": ""
+    },
+    "addCustomer": "Add Customer",
+    "@addCustomer": {
+        "description": ""
+    },
+    "addPropertiy": "Add Property",
+    "@addPropertiy": {
+        "description": ""
+    },
+    "connectionErrorMsg": "An error occurred, pelase check your internet connection!",
+    "@connectionErrorMsg": {
+        "description": ""
+    },
+    "emailAdressLable": "Email Adress",
+    "@emailAdressLable": {
+        "description": ""
+    },
+    "emailAdressWarningMsg": "Please enter a valid email address.",
+    "@emailAdressWarningMsg": {
+        "description": ""
+    },
+    "propertyAddedSuccesfully": "The property has been added succesfully",
+    "@propertyAddedSuccesfully": {
+        "description": ""
+    }
+}

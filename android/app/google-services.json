@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1079742959399",
+    "firebase_url": "https://evnet-customer.firebaseio.com",
+    "project_id": "evnet-customer",
+    "storage_bucket": "evnet-customer.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1079742959399:android:702b61b55ff02f3bd16302",
+        "android_client_info": {
+          "package_name": "com.example.EvnetCustomer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1079742959399-es0per2puv13sjsi6db32dbc0iquhsci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqwNKybmuEfJqRl725wXzp0tIiPhiU8AE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1079742959399-es0per2puv13sjsi6db32dbc0iquhsci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

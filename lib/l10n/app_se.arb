@@ -1,0 +1,86 @@
+{
+    "login": "Logga in",
+    "@login": {
+        "description": ""
+    },
+    "signup": "registrera dig",
+    "@signup": {
+        "description": ""
+    },
+    "logout": "Logga ut",
+    "@logout": {
+        "description": "logout from the system"
+    },
+    "createAccount": "Skapa nytt konto",
+    "@createAccount": {
+        "description": ""
+    },
+    "haveAccount": "I already have an account",
+    "@haveAccount": {
+        "description": ""
+    },
+    "addLogo": "Add your company logo",
+    "@addLogo": {
+        "description": ""
+    },
+    "addImage": "Add property image",
+    "@addImage": {
+        "description": ""
+    },
+    "pickImageWarningMessage": "Please pick an image",
+    "@pickImageWarningMessage": {
+        "description": "Warning message for picking image"
+    },
+    "pickImageSuccessfullyMsg": "Bilden laddades upp felfritt!",
+    "@pickImageSuccessfullyMsg": {
+        "description": ""
+    },
+    "email": "mejl adress",
+    "@email": {
+        "description": ""
+    },
+    "firstName": "First Name",
+    "@firstName": {
+        "description": ""
+    },
+    "customerName": "Kundens namn",
+    "@customerName": {
+        "description": ""
+    },
+    "nameWarningMessage": "Vänligen skriv namnet",
+    "@nameWarningMessage": {
+        "description": ""
+    },
+    "lastName": "Last Name",
+    "@lastName": {
+        "description": ""
+    },
+    "phoneNr": "Phone Number",
+    "@phoneNr": {
+        "description": ""
+    },
+    "addCustomer": "Lägg till ny kund",
+    "@addCustomer": {
+        "description": ""
+    },
+    "addPropertiy": "Lägg till ny object",
+    "@addPropertiy": {
+        "description": ""
+    },
+    "connectionErrorMsg": "An error occurred, pelase check your internet connection!",
+    "@connectionErrorMsg": {
+        "description": ""
+    },
+    "emailAdressLable": "Email Adress",
+    "@emailAdressLable": {
+        "description": ""
+    },
+    "emailAdressWarningMsg": "Please enter a valid email address.",
+    "@emailAdressWarningMsg": {
+        "description": ""
+    },
+    "propertyAddedSuccesfully": "The property has been added succesfully",
+    "@propertyAddedSuccesfully": {
+        "description": ""
+    }
+}
