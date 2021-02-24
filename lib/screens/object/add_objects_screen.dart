@@ -127,6 +127,13 @@ class _AddObjectScreenState extends State<AddObjectScreen> {
       });
     } catch (err) {
       print(err);
+
+      Scaffold.of(ctx).showSnackBar(
+        SnackBar(
+          content: Text(err),
+          backgroundColor: Theme.of(ctx).errorColor,
+        ),
+      );
       setState(() {
         _isLoading = false;
       });

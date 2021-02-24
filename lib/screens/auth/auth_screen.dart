@@ -38,10 +38,34 @@ class _AuthScreenState extends State<AuthScreen> {
         _isLoading = true;
       });
       if (isLogin) {
-        authResult = await _auth.signInWithEmailAndPassword(
-          email: email,
-          password: password,
-        );
+        try {
+          authResult = await _auth.signInWithEmailAndPassword(
+            email: email,
+            password: password,
+          );
+        } on FirebaseAuthException catch (e) {
+          Scaffold.of(ctx).showSnackBar(
+            SnackBar(
+              content: Text(e.message),
+              backgroundColor: Theme.of(ctx).errorColor,
+            ),
+          );
+          setState(() {
+            _isLoading = false;
+          });
+        } catch (err) {
+          print(err);
+
+          Scaffold.of(ctx).showSnackBar(
+            SnackBar(
+              content: Text(err),
+              backgroundColor: Theme.of(ctx).errorColor,
+            ),
+          );
+          setState(() {
+            _isLoading = false;
+          });
+        }
       } else {
         authResult = await _auth.createUserWithEmailAndPassword(
           email: email,
