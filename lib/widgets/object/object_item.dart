@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:evnet_agents/screens/object/imageScreen.dart';
 
 class ObjectItem extends StatefulWidget {
   final Map<String, dynamic> data;
@@ -22,49 +23,70 @@ class _ObjectItemState extends State<ObjectItem> {
   Widget build(BuildContext context) {
     // final double height = MediaQuery.of(context).size.height;
     imageUrls = widget.data['image_urls'];
-    final List<Widget> imageSliders = imageUrls
-        .map((item) => Container(
-              child: Container(
-                margin: EdgeInsets.all(5.0),
-                child: ClipRRect(
-                    borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                    child: Stack(
-                      children: <Widget>[
-                        Image.network(item, fit: BoxFit.cover, width: 1000.0),
-                        Positioned(
-                          bottom: 0.0,
-                          left: 0.0,
-                          right: 0.0,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                colors: [
-                                  Color.fromARGB(200, 0, 0, 0),
-                                  Color.fromARGB(0, 0, 0, 0)
-                                ],
-                                begin: Alignment.bottomCenter,
-                                end: Alignment.topCenter,
-                              ),
+
+    List<Widget> imageSliders;
+    if (imageUrls != null) {
+      List<String> imageUrlsAsStr = imageUrls.map((s) => s as String).toList();
+      imageSliders = imageUrls
+          .map((item) => Container(
+                child: Container(
+                  margin: EdgeInsets.all(5.0),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(5.0)),
+                      child: Stack(
+                        children: <Widget>[
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push<Widget>(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ImageScreen(
+                                      imageUrlsAsStr, imageUrls.indexOf(item)),
+                                ),
+                              );
+                            },
+                            child: Image.network(
+                              item,
+                              fit: BoxFit.cover,
+                              width: 1000.0,
+                              height: 1000.0,
                             ),
-                            padding: EdgeInsets.symmetric(
-                                vertical: 10.0, horizontal: 20.0),
-                            child: Center(
-                              child: Text(
-                                '${imageUrls.indexOf(item) + 1} (${imageUrls.length})',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  // fontSize: 20.0,
-                                  fontWeight: FontWeight.bold,
+                          ),
+                          Positioned(
+                            bottom: 0.0,
+                            left: 0.0,
+                            right: 0.0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                gradient: LinearGradient(
+                                  colors: [
+                                    Color.fromARGB(200, 0, 0, 0),
+                                    Color.fromARGB(0, 0, 0, 0)
+                                  ],
+                                  begin: Alignment.bottomCenter,
+                                  end: Alignment.topCenter,
+                                ),
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 10.0, horizontal: 20.0),
+                              child: Center(
+                                child: Text(
+                                  '${imageUrls.indexOf(item) + 1} (${imageUrls.length})',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    // fontSize: 20.0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
-                    )),
-              ),
-            ))
-        .toList();
+                        ],
+                      )),
+                ),
+              ))
+          .toList();
+    }
     return SingleChildScrollView(
       child: Container(
         color: Color(0xFFC8E6C9),
@@ -81,15 +103,19 @@ class _ObjectItemState extends State<ObjectItem> {
                   child: Container(
                       child: Column(
                     children: <Widget>[
-                      CarouselSlider(
-                        options: CarouselOptions(
-                          // autoPlay: true,
-                          aspectRatio: 2.0,
-                          enlargeCenterPage: true,
-                          initialPage: 0,
-                        ),
-                        items: imageSliders,
-                      ),
+                      imageSliders != null
+                          ? CarouselSlider(
+                              options: CarouselOptions(
+                                  // autoPlay: true,
+                                  aspectRatio: 2.0,
+                                  enlargeCenterPage: true,
+                                  initialPage: 0,
+                                  viewportFraction: 0.9,
+                                  enlargeStrategy:
+                                      CenterPageEnlargeStrategy.height),
+                              items: imageSliders,
+                            )
+                          : Image.asset('assets/images/evnet-noimage.jpg'),
                     ],
                   )),
                 )

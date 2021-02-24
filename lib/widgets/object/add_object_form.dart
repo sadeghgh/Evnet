@@ -5,7 +5,6 @@ import 'package:evnet_agents/helpers/location_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
-
 import '../pickers/user_image_list_picker.dart';
 import 'package:evnet_agents/screens/map/map_screen.dart';
 import 'package:image_picker/image_picker.dart';
@@ -30,6 +29,7 @@ class AddObjectForm extends StatefulWidget {
     String city,
     GeoPoint location,
     String size,
+    String amountRooms,
     String price,
     String age,
     bool pool,
@@ -49,12 +49,14 @@ class _AddObjectFormState extends State<AddObjectForm> {
   var _floor = '';
   var _adress = '';
   var _size = '';
+  var _amountRooms = '1+1';
   var _price = '';
   var _age = '';
   bool _pool = false;
   List<File> _userImageFiles;
   String _typeDropdownValue = 'Villa';
   String _saleOrRentDropdownValue = 'Sale';
+  String _amountRoomsDropdownValue = '1+1';
   GeoPoint _locationConnectedToAdress;
   String _city;
 
@@ -107,15 +109,15 @@ class _AddObjectFormState extends State<AddObjectForm> {
     final isValid = _formKey.currentState.validate();
     FocusScope.of(context).unfocus();
 
-    if (_userImageFiles == null) {
-      Scaffold.of(context).showSnackBar(
-        SnackBar(
-          content: Text(AppLocalizations.of(context).pickImageWarningMessage),
-          backgroundColor: Theme.of(context).errorColor,
-        ),
-      );
-      return;
-    }
+    // if (_userImageFiles == null) {
+    //   Scaffold.of(context).showSnackBar(
+    //     SnackBar(
+    //       content: Text(AppLocalizations.of(context).pickImageWarningMessage),
+    //       backgroundColor: Theme.of(context).errorColor,
+    //     ),
+    //   );
+    //   return;
+    // }
 
     if (isValid) {
       _formKey.currentState.save();
@@ -130,6 +132,7 @@ class _AddObjectFormState extends State<AddObjectForm> {
         _city,
         _locationConnectedToAdress,
         _size,
+        _amountRooms,
         _price,
         _age,
         _pool,
@@ -192,7 +195,7 @@ class _AddObjectFormState extends State<AddObjectForm> {
                     onChanged: (String newValue) {
                       setState(() {
                         newValue != null
-                            ? _type = newValue
+                            ? _type = _typeDropdownValue = newValue
                             : _type = _typeDropdownValue;
                       });
                     },
@@ -218,7 +221,7 @@ class _AddObjectFormState extends State<AddObjectForm> {
                     onChanged: (String newValue) {
                       setState(() {
                         newValue != null
-                            ? _saleOrRent = newValue
+                            ? _saleOrRent = _saleOrRentDropdownValue = newValue
                             : _saleOrRent = _saleOrRentDropdownValue;
                       });
                     },
@@ -313,6 +316,40 @@ class _AddObjectFormState extends State<AddObjectForm> {
                     onSaved: (value) {
                       _size = value;
                     },
+                  ),
+                  DropdownButton<String>(
+                    value: _amountRoomsDropdownValue,
+                    icon: Icon(Icons.arrow_downward),
+                    iconSize: 24,
+                    elevation: 16,
+                    isExpanded: true,
+                    style: Theme.of(context).textTheme.bodyText2,
+                    underline: Container(
+                      height: 2,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    onChanged: (String newValue) {
+                      setState(() {
+                        newValue != null
+                            ? _amountRooms =
+                                _amountRoomsDropdownValue = newValue
+                            : _amountRooms = _amountRoomsDropdownValue;
+                      });
+                    },
+                    items: <String>[
+                      '1+1',
+                      '2+1',
+                      '3+1',
+                      '4+1',
+                      '5+1',
+                      '6+1',
+                      '7+1'
+                    ].map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,

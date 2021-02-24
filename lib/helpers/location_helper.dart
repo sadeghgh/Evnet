@@ -24,6 +24,13 @@ class LocationHelper {
     int postionOfCity = splitedAdress.length - 2;
     String unformattedCityName = splitedAdress[postionOfCity];
     List<String> splitedUnformattedCityName = unformattedCityName.split(" ");
-    return splitedUnformattedCityName[2];
+    String city;
+    for (int i = 0; i < splitedUnformattedCityName.length; i++) {
+      if (RegExp(r'^[0-9]+$').hasMatch(splitedUnformattedCityName[i]) != true) {
+        city = splitedUnformattedCityName[i];
+        print(city);
+      }
+    }
+    return city;
   }
 }

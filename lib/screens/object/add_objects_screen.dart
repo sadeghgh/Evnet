@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
@@ -9,8 +9,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:evnet_agents/widgets/object/add_object_form.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:multi_image_picker/multi_image_picker.dart';
-import 'package:flutter_absolute_path/flutter_absolute_path.dart';
+import 'package:evnet_agents/helpers/genRandomNumber_helper.dart';
 
 class AddObjectScreen extends StatefulWidget {
   static const routeName = '/add-objects';
@@ -34,6 +33,7 @@ class _AddObjectScreenState extends State<AddObjectScreen> {
     String city,
     GeoPoint location,
     String size,
+    String amountRooms,
     String price,
     String age,
     bool pool,
@@ -46,11 +46,14 @@ class _AddObjectScreenState extends State<AddObjectScreen> {
       });
       currentUserUid = await _auth.currentUser.uid;
 
+      String random6DigitNumberStr = GenRandomNumberHelper.randomDigits();
+
       DocumentReference firestoreRef = await FirebaseFirestore.instance
           .collection('Agents')
           .doc(currentUserUid)
           .collection('Objects')
           .add({
+        'objectNr': random6DigitNumberStr,
         'title': title,
         'type': type,
         'saleOrRental': saleOrRent,
@@ -60,6 +63,7 @@ class _AddObjectScreenState extends State<AddObjectScreen> {
         'city': city,
         'location': location,
         'size': size,
+        'amountRooms': amountRooms,
         'price': price,
         'age': age,
         'pool': pool,

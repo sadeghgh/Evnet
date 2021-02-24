@@ -1,9 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:flutter_absolute_path/flutter_absolute_path.dart';
 
 class UserImageListPicker extends StatefulWidget {
@@ -51,7 +49,7 @@ class _UserImageListPickerState extends State<UserImageListPicker> {
 
     try {
       resultList = await MultiImagePicker.pickImages(
-        maxImages: 25,
+        maxImages: 35,
         enableCamera: true,
         selectedAssets: images,
         cupertinoOptions: CupertinoOptions(takePhotoIcon: "chat"),

@@ -58,9 +58,6 @@ class _YourObjectsScreenState extends State<YourObjectsScreen> {
                 reverse: false,
                 itemCount: objectDocs.length,
                 itemBuilder: (ctx, index) => YourObjectsListTile(
-                      objectDocs[index].data()['image_urls'][0],
-                      objectDocs[index].data()["title"],
-                      objectDocs[index].data()["adress"],
                       objectDocs[index].data(),
                     )),
           );
