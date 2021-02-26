@@ -105,6 +105,17 @@ class _YourObjectsListTileState extends State<YourObjectsListTile> {
                       // textScaleFactor: 0.8,
                     ),
                     Text(
+                      ((widget.data['size'] != null) &&
+                              (widget.data['price'] != null))
+                          ? (num.parse(widget.data['price']) /
+                                      num.parse(widget.data['size']))
+                                  .toStringAsFixed(0) +
+                              " TL / m²"
+                          : 'Not added',
+                      style: Theme.of(context).textTheme.bodyText2,
+                      // textScaleFactor: 0.8,
+                    ),
+                    Text(
                       widget.data['amountRooms'] != null
                           ? widget.data['amountRooms']
                           : 'Not added',

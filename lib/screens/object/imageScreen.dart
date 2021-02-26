@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pinch_zoom_image_last/pinch_zoom_image_last.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class ImageScreen extends StatefulWidget {
@@ -17,39 +17,40 @@ class _ImageScreenState extends State<ImageScreen> {
   @override
   Widget build(BuildContext context) {
     final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
-        appBar: AppBar(
-          title: Text('The property images'),
-        ),
-        body: CarouselSlider(
-          options: CarouselOptions(
-            height: height,
-            viewportFraction: 1.0,
-            initialPage: widget.initialPageNr,
-            enlargeCenterPage: false,
-            // autoPlay: false,
-          ),
-          items: widget.imageUrls
+      appBar: AppBar(
+        title: Text('The property images'),
+      ),
+      body: Center(
+        child: Carousel(
+          // boxFit: BoxFit.cover,
+          autoplay: false,
+          animationCurve: Curves.fastOutSlowIn,
+          animationDuration: Duration(milliseconds: 1000),
+          dotSize: 6.0,
+          dotIncreasedColor: Color(0xFF1B5E20),
+          dotBgColor: Colors.transparent,
+          dotPosition: DotPosition.topRight,
+          dotVerticalPadding: 10.0,
+          showIndicator: true,
+          indicatorBgPadding: 7.0,
+          images: widget.imageUrls
               .map((item) => Container(
                     child: Center(
+                      child: InteractiveViewer(
                         child: Image.network(
-                      item,
-                      fit: BoxFit.cover,
-                      height: height,
-                    )),
+                          item,
+                          fit: BoxFit.cover,
+                          height: height,
+                          width: width,
+                        ),
+                      ),
+                    ),
                   ))
               .toList(),
-        ));
-    //  PinchZoomImage(
-    //   image: Image.network(url),
-    //   zoomedBackgroundColor: Color.fromRGBO(240, 240, 240, 1.0),
-    //   hideStatusBarWhileZooming: true,
-    //   onZoomStart: () {
-    //     print('Zoom started');
-    //   },
-    //   onZoomEnd: () {
-    //     print('Zoom finished');
-    //   },
-    // ));
+        ),
+      ),
+    );
   }
 }
