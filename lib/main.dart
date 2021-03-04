@@ -10,9 +10,7 @@ import 'screens/agent_main/agent_main_screen.dart';
 import 'screens/customer/add_customer_screen.dart';
 import 'screens/customer/your_customers_screen.dart';
 import 'package:evnet_agents/screens/object/object_item_screen.dart';
-
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import 'package:firebase_core/firebase_core.dart';
 
 void main() => runApp(MyApp());

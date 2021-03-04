@@ -4,16 +4,16 @@ import 'package:multi_image_picker/multi_image_picker.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_absolute_path/flutter_absolute_path.dart';
 
-class UserImageListPicker extends StatefulWidget {
-  UserImageListPicker(this.imagePickFn);
+class ObjectImageListPicker extends StatefulWidget {
+  ObjectImageListPicker(this.imagePickFn);
 
   final void Function(List<File> pickedImageList, BuildContext ctx) imagePickFn;
 
   @override
-  _UserImageListPickerState createState() => _UserImageListPickerState();
+  _ObjectImageListPickerState createState() => _ObjectImageListPickerState();
 }
 
-class _UserImageListPickerState extends State<UserImageListPicker> {
+class _ObjectImageListPickerState extends State<ObjectImageListPicker> {
   // @override
   // void initState() {
   //   super.initState();
@@ -54,9 +54,10 @@ class _UserImageListPickerState extends State<UserImageListPicker> {
         selectedAssets: images,
         cupertinoOptions: CupertinoOptions(takePhotoIcon: "chat"),
         materialOptions: MaterialOptions(
-          actionBarColor: "#abcdef",
+          actionBarColor: "#18873D",
           actionBarTitle: "Please select your pictures",
           allViewTitle: "All Photos",
+          statusBarColor: "#1B5E20",
           useDetailsView: false,
           textOnNothingSelected: "No picture selected!",
           selectCircleStrokeColor: "#000000",

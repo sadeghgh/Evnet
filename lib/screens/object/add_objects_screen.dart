@@ -99,7 +99,7 @@ class _AddObjectScreenState extends State<AddObjectScreen> {
             .child(firestoreRef.id + imagNr.toString() + '.jpg');
         // String filePath =
         //     await FlutterAbsolutePath.getAbsolutePath(element.identifier);
-        await ref.putFile(element).onComplete;
+        await ref.putFile(element);
 
         final url = await ref.getDownloadURL();
         urls.add(url);

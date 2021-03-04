@@ -78,7 +78,7 @@ class _AuthScreenState extends State<AuthScreen> {
             .child(authResult.user.uid)
             .child(authResult.user.uid + '-logo.jpg');
 
-        await ref.putFile(File(image.path)).onComplete;
+        await ref.putFile(File(image.path));
 
         final url = await ref.getDownloadURL();
 

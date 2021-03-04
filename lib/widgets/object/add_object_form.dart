@@ -60,9 +60,9 @@ class _AddObjectFormState extends State<AddObjectForm> {
   String _saleOrRentDropdownValue = 'Sale';
   String _amountRoomsDropdownValue = '1+1';
   GeoPoint _locationConnectedToAdress;
-  String _city;
-  String _postalCode;
-  String _district;
+  String _city = '';
+  String _postalCode = '';
+  String _district = '';
   Map<String, String> adressInfo;
 
   TextEditingController adressController = TextEditingController();
@@ -171,7 +171,7 @@ class _AddObjectFormState extends State<AddObjectForm> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: <Widget>[
-                  UserImageListPicker(_pickedImage),
+                  ObjectImageListPicker(_pickedImage),
                   TextFormField(
                     key: ValueKey('title'),
                     autocorrect: true,
