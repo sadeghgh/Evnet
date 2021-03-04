@@ -40,9 +40,9 @@ dependencies:
   multi_image_picker: ^4.7.15
   path_provider: ^1.6.27
   flutter_absolute_path: ^1.0.6
-  pinch_zoom_image_last: ^0.3.2
   photo_view: ^0.10.3
   carousel_pro: ^1.0.0
+  font_awesome_flutter: ^8.11.0
 
 dev_dependencies:
   flutter_launcher_icons: "^0.8.0"
@@ -67,6 +67,13 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
    - assets/images/evnet-noimage.jpg
+   - assets/images/mainMeny/add-prop.png
+   - assets/images/mainMeny/y-prop.png
+   - assets/images/mainMeny/add-cust.png
+   - assets/images/mainMeny/y-cust.png
+   - assets/images/mainMeny/y-co-ag.png
+   - assets/images/mainMeny/add-co-ag.png
+   - assets/images/mainMeny/report.png
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

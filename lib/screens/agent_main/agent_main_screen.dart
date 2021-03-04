@@ -57,12 +57,8 @@ class AgentMainScreen extends StatelessWidget {
         padding: const EdgeInsets.all(25),
         children: MAIN_MENY_DATA
             .map(
-              (catData) => MainMentItem(
-                catData.id,
-                catData.title,
-                catData.color,
-                catData.nextPage,
-              ),
+              (catData) => MainMentItem(catData.id, catData.title,
+                  catData.color, catData.nextPage, catData.imagePath),
             )
             .toList(),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(

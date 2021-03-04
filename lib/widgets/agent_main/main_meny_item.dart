@@ -5,8 +5,9 @@ class MainMentItem extends StatelessWidget {
   final String title;
   final Color color;
   final String nextPage;
+  final String imagePath;
 
-  MainMentItem(this.id, this.title, this.color, this.nextPage);
+  MainMentItem(this.id, this.title, this.color, this.nextPage, this.imagePath);
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).pushNamed(
@@ -30,21 +31,35 @@ class MainMentItem extends StatelessWidget {
         splashColor: Theme.of(context).primaryColor,
         borderRadius: BorderRadius.circular(15),
         child: Container(
-          padding: const EdgeInsets.all(15),
-          child: Text(
-            title,
-            style: Theme.of(context).textTheme.subtitle1,
-            textAlign: TextAlign.center,
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Text(
+                title,
+                // style: TextStyle(color: Colors.white),
+                style: Theme.of(context).textTheme.subtitle1.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                textAlign: TextAlign.center,
+              ),
+              Expanded(
+                child: ClipRRect(
+                    child: Image.asset(
+                  imagePath,
+                )),
+              ),
+            ],
           ),
           decoration: BoxDecoration(
-            // boxShadow: [
-            //   BoxShadow(
-            //     color: color,
-            //     blurRadius: 1.0,
-            //     // offset: Offset.zero,
-            //     // spreadRadius: 1.0,
-            //   ),
-            // ],
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black38,
+                blurRadius: 9.0,
+                // offset: Offset.infinite,
+                spreadRadius: 1.0,
+              ),
+            ],
             color: color.withOpacity(0.9),
 
             // gradient: LinearGradient(

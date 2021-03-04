@@ -27,6 +27,8 @@ class AddObjectForm extends StatefulWidget {
     String floor,
     String adresss,
     String city,
+    String postalCode,
+    String district,
     GeoPoint location,
     String size,
     String amountRooms,
@@ -59,6 +61,9 @@ class _AddObjectFormState extends State<AddObjectForm> {
   String _amountRoomsDropdownValue = '1+1';
   GeoPoint _locationConnectedToAdress;
   String _city;
+  String _postalCode;
+  String _district;
+  Map<String, String> adressInfo;
 
   TextEditingController adressController = TextEditingController();
 
@@ -67,11 +72,14 @@ class _AddObjectFormState extends State<AddObjectForm> {
       final locData = await Location().getLocation();
       _locationConnectedToAdress =
           GeoPoint(locData.latitude, locData.longitude);
-      String foundAdress = await LocationHelper.getPlaceAddress(
+      adressInfo = await LocationHelper.getPlaceAddress(
           locData.latitude, locData.longitude);
-      _city = LocationHelper.fetchCityFromAdress(foundAdress);
+
+      _city = adressInfo['city'];
+      _postalCode = adressInfo['postalCode'];
+      _district = adressInfo['district'];
       setState(() {
-        this.adressController.text = foundAdress;
+        this.adressController.text = adressInfo['adress'];
       });
     } catch (error) {
       print(error.toString());
@@ -92,11 +100,13 @@ class _AddObjectFormState extends State<AddObjectForm> {
       final locData = selectedLocation;
       _locationConnectedToAdress =
           GeoPoint(locData.latitude, locData.longitude);
-      String foundAdress = await LocationHelper.getPlaceAddress(
+      adressInfo = await LocationHelper.getPlaceAddress(
           locData.latitude, locData.longitude);
-      _city = LocationHelper.fetchCityFromAdress(foundAdress);
+      _city = adressInfo['city'];
+      _postalCode = adressInfo['postalCode'];
+      _district = adressInfo['district'];
       setState(() {
-        this.adressController.text = foundAdress;
+        this.adressController.text = adressInfo['adress'];
       });
     }
   }
@@ -130,6 +140,8 @@ class _AddObjectFormState extends State<AddObjectForm> {
         _floor.trim(),
         _adress,
         _city,
+        _postalCode,
+        _district,
         _locationConnectedToAdress,
         _size,
         _amountRooms,

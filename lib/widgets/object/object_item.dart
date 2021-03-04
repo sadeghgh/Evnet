@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:evnet_agents/screens/object/imageScreen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ObjectItem extends StatefulWidget {
   final Map<String, dynamic> data;
@@ -152,9 +153,10 @@ class _ObjectItemState extends State<ObjectItem> {
                     children: <Widget>[
                       Row(
                         children: <Widget>[
-                          Icon(
-                            Icons.home,
-                            color: widget.iconColor,
+                          FaIcon(
+                            FontAwesomeIcons.rulerCombined,
+                            size: 18.0,
+                            color: this.widget.iconColor,
                           ),
                           SizedBox(
                             width: 6,
@@ -180,8 +182,9 @@ class _ObjectItemState extends State<ObjectItem> {
                       ),
                       Row(
                         children: <Widget>[
-                          Icon(
-                            Icons.money,
+                          FaIcon(
+                            FontAwesomeIcons.liraSign,
+                            size: 18.0,
                             color: this.widget.iconColor,
                           ),
                           SizedBox(
